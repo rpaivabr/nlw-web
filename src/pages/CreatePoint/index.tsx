@@ -51,7 +51,6 @@ const CreatePoint: React.FC = () => {
     if (selectedUf === '0') return;
     (async () => {
       setCities((await Axios.get<any[]>(`${apiUf}/${selectedUf}/municipios`)).data.map(city => city.nome));
-      setSelectedCity('0');
     })();
   }, [selectedUf]);
 
